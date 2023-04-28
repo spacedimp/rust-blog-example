@@ -13,9 +13,14 @@ path = "src/main.rs"
 name = "markd"
 path = "src/bin/markd.rs"
 
+[profile.release]
+lto=true
+codegen-units = 1
+opt-level= 's'
+
 [dependencies]
 askama = {version="0.12.0", features=["markdown"]}
-tokio = {version="1.13.0", features = ["macros", "rt-multi-thread"]}
-axum =  "0.6.4"
-sqlx = {version = "0.6", features = ["runtime-tokio-rustls", "postgres", "macros", "time"]} 
+tokio = {version="1.28.0", features = ["macros", "rt-multi-thread"]}
+axum =  "0.6.17"
+sqlx = {version = "0.6.3", features = ["runtime-tokio-rustls", "postgres", "macros", "time"]} 
 tower-http = {version = "0.4", features=["full"]}
