@@ -16,7 +16,7 @@ async fn main() -> Result<(), sqlx::Error>{
             file.read_to_string(&mut content).unwrap();
             inserter = content;
         },
-        Err(error) => {panic!("could not insert into postgres")},
+        Err(error) => {panic!("could not read file")},
     }
 
     let pool = PgPoolOptions::new()
