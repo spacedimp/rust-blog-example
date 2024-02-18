@@ -18,5 +18,5 @@ cargo run --bin markd "some title" ./some_post.md
 then spin up the server
 
 ```
-cargo run --bing blog-rs
+cargo run --bin blog-rs
 ```
