@@ -26,7 +26,7 @@ async fn main() -> Result<(), sqlx::Error>{
         .await
         .expect("couldn't create pool");
 
-    let row: (i64,) = sqlx::query_as("insert into myposts (post_title, post_body) values ($1, $2) returning post_id")
+    let row: (i32,) = sqlx::query_as("insert into myposts (post_title, post_body) values ($1, $2) returning post_id")
         .bind(&args[1])
         .bind(inserter)
         .fetch_one(&pool)
