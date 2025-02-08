@@ -1,2 +1,12 @@
 /target
+**/target/
 **/*.rs.bk
+debug/
+release/
+
+/.rustc_info.json
+/.rustfmt.toml
+
+*.swp
+*.swo
+core

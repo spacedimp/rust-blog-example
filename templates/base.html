@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>{{ post_title}}</title>
-		<link href="/assets/post.css" rel="stylesheet" type="text/css">
+		<title>{{ post_title }}</title>
+		<!-- we'll use Tower middlewar middleware to serve this static content soon-->
+		<link href="/assets/post.css rel="stylesheet" type="text/css">
 	</head>
 
 	<body>
 		<div id="Post">
 		{% block post %}
-		{% endblock %}
+		{% endblock post %}
 		</div>
 	</body>
 </html>

@@ -3,24 +3,17 @@ name = "blog-rs"
 version = "0.1.0"
 edition = "2021"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[dependencies]
+tokio = {version="1.43.0", features = ["macros", "rt-multi-thread"]}
+axum = "0.8.1"
+askama = {version="0.12.1", features=["markdown"]}
+sqlx = {version="0.8.3", features = ["runtime-tokio-rustls", "postgres", "macros", "time"]}
+tower-http = {version="0.6.2", features=["full"]}
 
 [[bin]]
-name = "blog-rs" 
+name = "blog-rs"
 path = "src/main.rs"
 
-[[bin]]
+[[bind]]
 name = "markd"
 path = "src/bin/markd.rs"
-
-[profile.release]
-lto=true
-codegen-units = 1
-opt-level= 's'
-
-[dependencies]
-askama = {version="0.12.0", features=["markdown"]}
-tokio = {version="1.28.0", features = ["macros", "rt-multi-thread"]}
-axum =  "0.6.17"
-sqlx = {version = "0.6.3", features = ["runtime-tokio-rustls", "postgres", "macros", "time"]} 
-tower-http = {version = "0.4", features=["full"]}
